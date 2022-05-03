@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Title, FilmsWrapper, FilmImg, FilmItem } from './film-items-styled';
+import {
+    Title,
+    FilmsWrapper,
+    FilmImg,
+    FilmItem
+} from './film-items-styled';
 import FilmRating from '../film-rating/film-rating';
 import { Link } from 'react-router-dom';
 

@@ -1,4 +1,8 @@
-import { Nav, NavItems, NavLinkItem } from './header-styled';
+import {
+    Nav,
+    NavItems,
+    NavLinkItem
+} from './header-styled';
 
 function Header() {
     return (

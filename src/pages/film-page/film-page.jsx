@@ -1,13 +1,22 @@
 import axios from 'axios';
-
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { FilmWrapper, FilmWrapperImg, FilmInfo, FilmTitle, FilmTitleOriginal, RatingMpaa, FilmInfoText, FilmInfoTextIntro, FilmImages } from './film-page-styled';
+import {
+    FilmWrapper,
+    FilmWrapperImg,
+    FilmInfo,
+    FilmTitle,
+    FilmTitleOriginal,
+    RatingMpaa,
+    FilmInfoText,
+    FilmInfoTextIntro
+} from './film-page-styled';
 
 function FilmPage() {
     const { id } = useParams();
     const [film, setFilm] = useState([]);
     const [images, setBox] = useState([]);
+
     const API_KEY = '9f0dbb07-0a38-44df-ad56-488fa085c240';
     const API_FILM = `https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`;
     const API_FILM_IMAGES = `https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}/images`;
