@@ -1,22 +1,30 @@
+import { Link } from 'react-router-dom';
 import {
     Nav,
-    NavItems,
-    NavLinkItem
+    NavItems
 } from './header-styled';
+import './header.css';
 
 function Header() {
     return (
         <header>
+            <h1 style={{ textAlign: 'center', fontWeight: '900' }}>Kinopoisk React App</h1>
             <Nav>
                 <NavItems>
                     <li>
-                        <NavLinkItem href="/">Главная</NavLinkItem>
+                        <Link to="/">
+                            Главная
+                        </Link>
                     </li>
                     <li>
-                        <NavLinkItem href="/">Кинопремьеры</NavLinkItem>
+                        <Link to="/premieres">
+                            Кинопремьеры
+                        </Link>
                     </li>
                     <li>
-                        <NavLinkItem href="/">Лучшие фильмы</NavLinkItem>
+                        <Link to="/top-films">
+                            Лучшие фильмы
+                        </Link>
                     </li>
                 </NavItems>
             </Nav>

@@ -1,55 +1,45 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
-    Title,
+    FilmItem,
     FilmsWrapper,
     FilmImg,
-    FilmItem,
-    FilmButton
-} from './film-items-styled';
-import FilmRating from '../film-rating/film-rating';
-import { Link } from 'react-router-dom';
+    Title
+} from '../../components/film-items/film-items-styled';
 
-function FilmItems() {
+function MoviePremieres() {
     const [dataFilm, setDataFilm] = useState([]);
-    const [page, setPage] = useState(1);
 
     const API_KEY = '9f0dbb07-0a38-44df-ad56-488fa085c240';
-    const API_URL_POPULAR = `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=${page}`;
+    const API_URL_PREMIERS = `https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2022&month=JULY`;
 
     useEffect(() => {
-        axios.get(API_URL_POPULAR, {
+        axios.get(API_URL_PREMIERS, {
             method: 'GET',
             headers: {
                 'X-API-KEY': API_KEY,
                 'Content-Type': 'application/json',
             },
         })
-            .then(({ data }) => setDataFilm(data.films))
-    }, [API_URL_POPULAR])
-
-    const handleNext = () => {
-        setPage((x) => x + 1)
-    }
+            .then(({ data }) => setDataFilm(data.items))
+    }, [API_URL_PREMIERS])
 
     return (
         <>
             <FilmsWrapper>
                 {dataFilm.map((item) => (
-                    <FilmItem key={item.filmId}>
+                    <FilmItem>
                         <Link style={{ textDecoration: 'none' }} to={`/film/${item.filmId}`}>
                             <FilmImg src={item.posterUrl} alt={item.nameRu}></FilmImg>
                             <Title>{item.nameRu}</Title>
-                            <FilmRating rating={item.rating} />
                         </Link>
                     </FilmItem>
                 ))}
             </FilmsWrapper>
-            <FilmButton onClick={handleNext}>
-                Next
-            </FilmButton>
+
         </>
     );
 }
 
-export default FilmItems;
+export default MoviePremieres;

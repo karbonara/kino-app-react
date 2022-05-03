@@ -6,6 +6,7 @@ export const FilmWrapper = styled.div`
     padding: 48px 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 `;
 export const FilmWrapperImg = styled.div`
     width: 80vw;

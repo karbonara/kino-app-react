@@ -10,10 +10,5 @@ export const NavItems = styled.ul`
     margin: 0;
     display: flex;
     justify-content: space-between;
-`;
-export const NavLinkItem = styled.a`
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
+    flex-wrap: wrap;
 `;

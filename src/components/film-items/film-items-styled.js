@@ -29,3 +29,19 @@ export const FilmItem = styled.div`
         transform: scale(1.03);
     }
 `;
+export const FilmButton = styled.button`
+    padding: 6px 14px;
+    display: block;
+    box-sizing: border-box;
+    border: none;
+    background: #f60;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    margin: 36px auto;
+    cursor: pointer;
+    &:hover {
+        background: #df5c05;
+    }
+`;
